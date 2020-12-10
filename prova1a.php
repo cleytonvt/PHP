@@ -28,7 +28,7 @@
  
 	
 	$sql = "INSERT INTO Questao (nome, idade) VALUES ($nome,$idade)";
-		if (mysql_query($conn, $sql)) {
+		if (mysqli_query($conn, $sql)) {
 			echo "Gravado com sucesso!";
 		} else {
 			echo "Error: " . $sql . "<br>" . mysqli_error($conn);
