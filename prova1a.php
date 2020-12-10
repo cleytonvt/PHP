@@ -14,27 +14,27 @@
     
 	$nome = $_POST["nome"];
 	$idade = $_POST["idade"];
-    $serv = "localhost";
+    	$serv = "localhost";
 	$dbase = "provaPHP";
 	$user = "root";
 	$psw = "55225";
 	
-	$conn = mysqli_connect($serv, $user, $psw, $dbase);
+	$bd = mysqli_connect($serv, $user, $psw, $dbase);
 
 
-	if (!$conn) {
+	if (!$bd) {
     	  die("Falha na conexão: " . mysqli_connect_error());
 	}
  
 	
 	$sql = "INSERT INTO Questao (nome, idade) VALUES ($nome,$idade)";
-		if (mysqli_query($conn, $sql)) {
+		if (mysqli_query($bd, $sql)) {
 			echo "Gravado com sucesso!";
 		} else {
 			echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 		}
 	
-	mysqli_close($conn);
+	mysqli_close($bd);
     ?> 
   </body>
 </html>
